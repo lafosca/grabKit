@@ -108,7 +108,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = GRK_i18n(@"GRK_SERVICES_LIST_TITLE", @"Network");
+    self.navigationItem.title = NSLocalizedString(@"Pick a photo", @"Network");
 
     self.tableView.rowHeight = 54;
     
@@ -142,17 +142,11 @@
 {
     [super viewWillAppear:animated];
  
-    // fix for iOS6.x
-	if ( ! [@[@"7.0"] containsObject:[[UIDevice currentDevice] systemVersion]] ){
-	
-    	if ( [[GRKPickerViewController sharedInstance] isPresentedInPopover] ) {
-        	self.tableView.contentOffset = CGPointZero;
-	        self.tableView.contentInset = UIEdgeInsetsZero;
-    	}
-    }
-
-
     
+    if ( [[GRKPickerViewController sharedInstance] isPresentedInPopover] ) {
+        self.tableView.contentOffset = CGPointZero;
+        self.tableView.contentInset = UIEdgeInsetsZero;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -64,7 +64,7 @@
     _imageViewProfilePicture.image = profileImage;
     _labelUsername.text = username;
     
-    _buttonLogout.text = GRK_i18n(@"GRK_USER_VIEW_LOGOUT", @"Log out");
+    _buttonLogout.text = NSLocalizedString(@"Log out", @"Log out");
     _buttonLogout.titleLabel.font = [UIFont boldSystemFontOfSize:12.];
     
     // Let's update the frame of the button according to the size of the localized text

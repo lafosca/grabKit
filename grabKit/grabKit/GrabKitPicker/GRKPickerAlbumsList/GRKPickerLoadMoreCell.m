@@ -82,7 +82,7 @@
     
     [_loadMoreButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
     
-    [_loadMoreButton setTitle:GRK_i18n(@"GRK_LOAD_MORE_CELL_ERROR_RETRY", @"An error occured. Please retry.") forState:UIControlStateNormal];
+    [_loadMoreButton setTitle:NSLocalizedString(@"An error occured. Please retry.", @"An error occured. Please retry.") forState:UIControlStateNormal];
     [_loadMoreButton sizeToFit];
     
     [self updateButtonFrame];
@@ -94,7 +94,7 @@
     
     [_loadMoreButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
     
-    [_loadMoreButton setTitle:GRK_i18n(@"GRK_LOAD_MORE_CELL_LOAD_MORE", @"Load more") forState:UIControlStateNormal];
+    [_loadMoreButton setTitle:NSLocalizedString(@"Load more", @"Load more") forState:UIControlStateNormal];
 
     [_loadMoreButton sizeToFit];
     

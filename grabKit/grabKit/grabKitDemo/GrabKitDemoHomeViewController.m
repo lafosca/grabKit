@@ -189,37 +189,6 @@
          Here is a snippet showing how you can retrieve such image :
          
          */
-
-        // If the url begins with assets-library://
-        if ( [[originalImage.URL absoluteString] hasPrefix:@"assets-library://"] ){
-            
-            // Instantiate a library
-            ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
-            
-            // Ask for the "Asset" for the URL. An asset is a representation of an image in the Photo application.
-            [library assetForURL:originalImage.URL
-                     resultBlock:^(ALAsset *asset) {
-                
-                         // Here, we have the asset, let's retrieve the image from it
-                         
-                         CGImageRef imgRef = [[asset defaultRepresentation] fullResolutionImage];
-                         /* Instead of the full res image, you can ask for an image that fits the screen
-                         CGImageRef imgRef  = [[asset defaultRepresentation] fullScreenImage];
-                         */
-                         
-                         // From the CGImage, let's build an UIImage
-                         UIImage * fullResImage = [UIImage imageWithCGImage:imgRef];
-                         
-                         // and we're done ! :)
-                         NSLog(@" The UIImage for URL %@ is %@", originalImage.URL, fullResImage);
-            
-                     } failureBlock:^(NSError *error) {
-                         
-                         // Something wrong happened.
-                         
-                     }];
-       
-        }
         
         
         

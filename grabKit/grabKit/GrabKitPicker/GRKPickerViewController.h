@@ -29,7 +29,8 @@
 #define DECREASE_OPERATIONS_COUNT [[GRKPickerViewController sharedInstance] decreaseOperationsCount];
 #define RESET_OPERATIONS_COUNT [[GRKPickerViewController sharedInstance] resetOperationsCount];
 
-#define GRK_BUNDLE [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"GrabKitBundle" ofType:@"bundle"]]
+//#define GRK_BUNDLE [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"GrabKitBundle" ofType:@"bundle"]]
+#define GRK_BUNDLE [NSBundle mainBundle]
 
 #define GRK_i18n(key, default) NSLocalizedStringFromTableInBundle(key, @"GrabKitPicker", GRK_BUNDLE, default)
 

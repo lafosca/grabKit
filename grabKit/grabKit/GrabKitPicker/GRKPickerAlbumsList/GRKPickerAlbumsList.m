@@ -116,22 +116,26 @@ NSUInteger kMaximumRetriesCount = 1;
             
             DECREASE_OPERATIONS_COUNT
             
-            _needToConnectView.alpha = 0;
-            _needToConnectView.hidden = NO;
-
-            NSString * needToConnectString = GRK_i18n(@"GRK_ALBUMS_LIST_NEED_TO_CONNECT", @"You need to connect to %serviceName%");
-            _needToConnectLabel.text = [needToConnectString stringByReplacingOccurrencesOfString:@"%serviceName%" withString:_grabber.serviceName];
-
-            [_connectButton setTitle:GRK_i18n(@"GRK_ALBUMS_LIST_CONNECT_BUTTON",@"Login") forState:UIControlStateNormal];
+//            _needToConnectView.alpha = 0;
+//            _needToConnectView.hidden = NO;
+//
+//            NSString * needToConnectString = NSLocalizedString(@"You need to connect to %serviceName%", @"You need to connect to %serviceName%");
+//            _needToConnectLabel.text = [needToConnectString stringByReplacingOccurrencesOfString:@"%serviceName%" withString:_grabber.serviceName];
+//
+//            [_connectButton setTitle:NSLocalizedString(@"Login",@"Login") forState:UIControlStateNormal];
+//            
+//            [UIView animateWithDuration:0.33 animations:^{
+//
+//                _needToConnectView.alpha = 1;
+//                [self hideHUD];
+//                
+//            }];
+//            
+//
+            //Automatic Login
             
-            [UIView animateWithDuration:0.33 animations:^{
-
-                _needToConnectView.alpha = 1;
-                [self hideHUD];
-                
-            }];
-            
-            
+            [self hideHUD];
+            [self didTouchConnectButton];
         }
             break;
             
@@ -139,9 +143,9 @@ NSUInteger kMaximumRetriesCount = 1;
         {
             DECREASE_OPERATIONS_COUNT
             
-            if ( ! [_grabber isKindOfClass:[GRKDeviceGrabber class]]) {
-                [self buildHeaderView];
-            }
+//            if ( ! [_grabber isKindOfClass:[GRKDeviceGrabber class]]) {
+//                [self buildHeaderView];
+//            }
         }
             break;
             
@@ -163,7 +167,7 @@ NSUInteger kMaximumRetriesCount = 1;
             _needToConnectView.alpha = 0;
             _needToConnectView.hidden = NO;
             
-            _needToConnectLabel.text = GRK_i18n(@"GRK_ALBUMS_LIST_ERROR_RETRY", @"An error occured. Please try again.");
+            _needToConnectLabel.text = NSLocalizedString(@"An error occured. Please try again.", @"An error occured. Please try again.");
             
             [UIView animateWithDuration:0.33 animations:^{
                 
@@ -291,7 +295,7 @@ NSUInteger kMaximumRetriesCount = 1;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
 
-    hud.labelText = GRK_i18n(@"GRK_ALBUMS_LIST_HUD_LOADING", @"Loading ...");
+    hud.labelText = NSLocalizedString(@"Loading…", @"Loading ...");
     
 }
 
@@ -372,7 +376,7 @@ NSUInteger kMaximumRetriesCount = 1;
     }
     
     
-    NSString * stringAllLoaded = GRK_i18n(@"GRK_ALBUMS_LIST_ALL_ALBUMS_LOADED", @"All albums loaded");
+    NSString * stringAllLoaded = NSLocalizedString(@"All albums loaded", @"All albums loaded");
     
     UIFont * fontAllLoaded = [UIFont fontWithName:@"Helvetica" size:14];
     
