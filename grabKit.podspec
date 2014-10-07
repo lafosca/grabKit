@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "grabKit"
-  s.version      = "1.4.1-camaloon"
+  s.version      = "1.4.2-camaloon"
   s.summary      = "Drop-in iOS component to easily import photos from Facebook, FlickR, Instagram, Picasa, and more."
   s.description  = <<-DESC
 				GrabKit allows you to retrieve photos from  :
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "Pierre-Olivier Simonard" => "pierre.olivier.simonard@gmail.com" }
 
-  s.source       = { :git => "https://github.com/lafosca/grabKit.git", :tag => "v1.4.1-camaloon" }
+  s.source       = { :git => "https://github.com/lafosca/grabKit.git", :tag => "v1.4.2-camaloon" }
 
 
   s.platform = :ios, '6.0'
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.resources = 'grabKit/grabKit/**/*.{xib}'
 
-  s.dependency 'Facebook-iOS-SDK', '~> 3.2.0'
+  s.dependency 'Facebook-iOS-SDK', '~> 3.19'
   s.dependency 'ISO8601DateFormatter', '~> 0.6'
   s.dependency 'MBProgressHUD', '~> 0.6'
   s.dependency 'NVUIGradientButton', '~> 1.3.0'
