@@ -185,19 +185,16 @@ static NSString *kGRKServiceNameFacebook = @"Facebook";
         numberOfAlbumsPerPage -= 1;
         
         //Create a batchQuery to ask for :
-        // _ the tagged photos (with a FQL query)
+        // _ the tagged photos (with a graph path query)
         // _ the photo albums (with a graph path query)
        __block GRKFacebookBatchQuery * batchQuery = [[GRKFacebookBatchQuery alloc] init];
         
         
         //  First query of the batch : the tagged photos
-        NSString * graphPathFQL = @"fql";
-        NSMutableDictionary *paramsFQL = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                          @"SELECT '' FROM photo_tag WHERE subject=me()", @"q",
-                                          nil];
+        NSString * graphPath = @"me/photos/tagged";
         
-        [batchQuery addQueryWithGraphPath:graphPathFQL 
-                               withParams:paramsFQL 
+        [batchQuery addQueryWithGraphPath:graphPath
+                               withParams:nil
                                   andName:@"taggedPhotos" 
                          andHandlingBlock:^id(GRKFacebookBatchQuery *query, id result, NSError *error) {
             
